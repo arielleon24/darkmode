@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import './App.css';
 import styled, {ThemeProvider} from "styled-components";
-import {lightTheme, darkTheme} from "./themes.js";
+import {lightTheme, darkTheme, GlobalStyles } from "./themes.js";
 
-const StyledApp = styled.div
+const StyledApp = styled.div``
 
 function App() {
   const {theme, setTheme} = useState("light")
@@ -13,7 +13,7 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme= {theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
        <StyledApp> Hello world </StyledApp>
     </ThemeProvider>
   );
