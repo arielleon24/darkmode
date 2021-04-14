@@ -6,7 +6,7 @@ import {lightTheme, darkTheme, GlobalStyles } from "./themes.js";
 const StyledApp = styled.div``
 
 function App() {
-  const {theme, setTheme} = useState("light")
+  const [theme, setTheme] = useState("dark");
 
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -14,7 +14,11 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-       <StyledApp> Hello world </StyledApp>
+        <GlobalStyles />
+        <StyledApp> 
+          Hello world
+          <button onClick={() => themeToggler}>Change Theme</button>  
+        </StyledApp>
     </ThemeProvider>
   );
 }
